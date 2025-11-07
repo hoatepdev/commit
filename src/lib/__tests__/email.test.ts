@@ -1,12 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import {
-  sendSquadInvitation,
-  sendProofSubmittedNotification,
-  sendChallengeCompletedEmail,
-} from '../email';
 
-// Mock Resend
-const mockSend = vi.fn();
+const mockSend = vi.hoisted(() => vi.fn());
+
 vi.mock('resend', () => ({
   Resend: vi.fn(() => ({
     emails: {
@@ -14,6 +9,12 @@ vi.mock('resend', () => ({
     },
   })),
 }));
+
+import {
+  sendSquadInvitation,
+  sendProofSubmittedNotification,
+  sendChallengeCompletedEmail,
+} from '../email';
 
 describe('Email Functions', () => {
   beforeEach(() => {

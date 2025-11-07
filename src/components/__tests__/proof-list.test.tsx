@@ -42,7 +42,7 @@ describe('ProofList', () => {
     render(<ProofList proofs={mockProofs} isCreator={true} />);
 
     expect(screen.getByText('Gym session completed')).toBeInTheDocument();
-    expect(screen.getAllByText(/15 January|January 15/i)).toBeTruthy();
+    expect(screen.getByText(/15 tháng 1, 2025/i)).toBeInTheDocument();
     expect(screen.getByText('approved')).toBeInTheDocument();
     expect(screen.getByText('pending')).toBeInTheDocument();
   });

@@ -30,12 +30,19 @@ describe('useToast', () => {
   it('generates unique IDs for toasts', () => {
     const { result } = renderHook(() => useToast());
 
+    let id1: string;
+    let id2: string;
+
     act(() => {
-      result.current.toast({ title: 'Toast 1' });
-      result.current.toast({ title: 'Toast 2' });
+      const toast1 = result.current.toast({ title: 'Toast 1' });
+      id1 = toast1.id;
+      const toast2 = result.current.toast({ title: 'Toast 2' });
+      id2 = toast2.id;
     });
 
-    expect(result.current.toasts[0].id).not.toBe(result.current.toasts[1].id);
+    expect(id1).not.toBe(id2);
+    expect(result.current.toasts).toHaveLength(1);
+    expect(result.current.toasts[0].id).toBe(id2);
   });
 
   it('dismisses a specific toast', () => {
