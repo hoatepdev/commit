@@ -54,7 +54,7 @@ cp .env.example .env
 npm run dev
 \`\`\`
 
-Open [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:9000](http://localhost:9000)
 
 ## 4. Test the App
 

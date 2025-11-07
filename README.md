@@ -101,7 +101,7 @@ NEXT_PUBLIC_POLAR_PUBLISHABLE_KEY=your_polar_publishable_key
 
 # App
 
-NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_APP_URL=http://localhost:9000
 \`\`\`
 
 ### Database Setup
@@ -141,7 +141,7 @@ yarn dev
 pnpm dev
 \`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:9000](http://localhost:9000) in your browser.
 
 ### Testing
 

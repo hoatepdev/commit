@@ -93,8 +93,8 @@ const { error } = await supabase
 
 \`\`\`typescript
 const { data, error } = await supabase
-.from('squad_members')
-.select('_, profiles(_)')
+.from('squad*members')
+.select('*, profiles(\_)')
 .eq('challenge_id', challengeId);
 \`\`\`
 
@@ -616,7 +616,7 @@ import { POST } from '@/app/api/upload/route';
 
 describe('/api/upload', () => {
 it('generates signed URL', async () => {
-const request = new Request('http://localhost:3000/api/upload', {
+const request = new Request('http://localhost:9000/api/upload', {
 method: 'POST',
 body: JSON.stringify({
 fileName: 'test.jpg',

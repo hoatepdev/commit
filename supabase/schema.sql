@@ -130,9 +130,11 @@ CREATE POLICY "Challenges viewable by creator and squad"
   ON public.challenges FOR SELECT
   USING (
     auth.uid() = creator_id
-    OR auth.uid() IN (
-      SELECT user_id FROM public.squad_members
-      WHERE challenge_id = id AND status = 'accepted'
+    OR EXISTS (
+      SELECT 1 FROM public.squad_members
+      WHERE challenge_id = id 
+      AND (user_id = auth.uid() OR email = (SELECT email FROM auth.users WHERE id = auth.uid()))
+      AND status = 'accepted'
     )
   );
 
@@ -148,23 +150,15 @@ CREATE POLICY "Creators can update own challenges"
 CREATE POLICY "Squad members viewable by challenge participants"
   ON public.squad_members FOR SELECT
   USING (
-    EXISTS (
-      SELECT 1 FROM public.challenges
-      WHERE id = challenge_id
-      AND (creator_id = auth.uid() OR auth.uid() IN (
-        SELECT user_id FROM public.squad_members sm2
-        WHERE sm2.challenge_id = challenge_id
-      ))
-    )
+    user_id = auth.uid()
+    OR email = (SELECT email FROM auth.users WHERE id = auth.uid())
+    OR public.is_challenge_creator(challenge_id, auth.uid())
   );
 
 CREATE POLICY "Challenge creators can invite squad members"
   ON public.squad_members FOR INSERT
   WITH CHECK (
-    EXISTS (
-      SELECT 1 FROM public.challenges
-      WHERE id = challenge_id AND creator_id = auth.uid()
-    )
+    public.is_challenge_creator(challenge_id, auth.uid())
   );
 
 -- Proofs policies
@@ -201,6 +195,17 @@ CREATE POLICY "Users can update own notifications"
   USING (auth.uid() = user_id);
 
 -- Functions
+
+-- Check if user is challenge creator (bypasses RLS to prevent recursion)
+CREATE OR REPLACE FUNCTION public.is_challenge_creator(challenge_id_param UUID, user_id_param UUID)
+RETURNS BOOLEAN AS $$
+BEGIN
+  RETURN EXISTS (
+    SELECT 1 FROM public.challenges
+    WHERE id = challenge_id_param AND creator_id = user_id_param
+  );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
 
 -- Update updated_at timestamp
 CREATE OR REPLACE FUNCTION update_updated_at_column()

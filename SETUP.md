@@ -168,7 +168,7 @@ NEXT_PUBLIC_POLAR_PUBLISHABLE_KEY=pk_xxxxx
 
 # App
 
-NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_APP_URL=http://localhost:9000
 NODE_ENV=development
 \`\`\`
 
@@ -180,7 +180,7 @@ Start the development server:
 npm run dev
 \`\`\`
 
-Visit http://localhost:3000
+Visit http://localhost:9000
 
 ## Step 8: Testing
 
