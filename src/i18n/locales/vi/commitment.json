@@ -1,0 +1,77 @@
+{
+  "title": "Tạo Cam Kết Của Bạn",
+  "fields": {
+    "title": "Tiêu Đề Thử Thách",
+    "titlePlaceholder": "VD: Đi gym 3 lần/tuần",
+    "description": "Mô Tả",
+    "descriptionPlaceholder": "Mô tả thử thách của bạn...",
+    "stakeAmount": "Số Tiền Đặt Cọc",
+    "stakeAmountHint": "Bạn sẵn sàng đặt cọc bao nhiêu tiền? (VNĐ)",
+    "duration": "Thời Gian",
+    "startDate": "Ngày Bắt Đầu",
+    "endDate": "Ngày Kết Thúc",
+    "frequency": "Tần Suất Bằng Chứng",
+    "frequencyDaily": "Hàng Ngày",
+    "frequencyWeekly": "Hàng Tuần",
+    "frequencyCustom": "Tùy Chỉnh",
+    "requiredProofs": "Bằng Chứng Yêu Cầu",
+    "requiredProofsHint": "Bạn cần nộp bao nhiêu bằng chứng?"
+  },
+  "squad": {
+    "title": "Đội Giám Sát",
+    "subtitle": "Mời 1-5 bạn bè làm người giám sát",
+    "addMember": "Thêm Thành Viên",
+    "memberEmail": "Email Bạn Bè",
+    "memberAdded": "Đã thêm {{count}} thành viên",
+    "memberAdded_plural": "Đã thêm {{count}} thành viên",
+    "maxReached": "Tối đa 5 thành viên trong đội"
+  },
+  "payment": {
+    "title": "Hoàn Tất Thanh Toán",
+    "summary": "Tóm Tắt Thử Thách",
+    "stake": "Tiền cọc:",
+    "totalStake": "Tổng Tiền Cọc",
+    "howItWorks": "Cách Hoạt Động",
+    "step1": "Tiền cọc được giữ an toàn cho đến khi thử thách kết thúc",
+    "step2": "Hoàn thành thử thách để nhận lại tiền",
+    "step3": "Nếu thất bại, tiền cọc sẽ được chia cho đội giám sát",
+    "payButton": "Thanh toán {{amount}} VNĐ"
+  },
+  "proof": {
+    "submitProof": "Nộp Bằng Chứng",
+    "uploadMedia": "Tải Lên Ảnh hoặc Video",
+    "caption": "Chú Thích",
+    "captionPlaceholder": "Thêm mô tả...",
+    "proofDate": "Ngày Bằng Chứng",
+    "submitted": "Đã nộp bằng chứng thành công",
+    "pending": "Đang Chờ Xét Duyệt",
+    "approved": "Đã Chấp Nhận",
+    "rejected": "Đã Từ Chối",
+    "disputed": "Đang Tranh Chấp"
+  },
+  "status": {
+    "pending": "Chờ Thanh Toán",
+    "active": "Đang Hoạt Động",
+    "completed": "Hoàn Thành",
+    "failed": "Thất Bại",
+    "cancelled": "Đã Hủy"
+  },
+  "actions": {
+    "create": "Tạo Thử Thách",
+    "createAndPay": "Tạo & Tiến Hành Thanh Toán",
+    "viewDetails": "Xem Chi Tiết",
+    "submitProof": "Nộp Bằng Chứng",
+    "verifyProof": "Xác Minh Bằng Chứng",
+    "challenge": "Khiếu Nại Bằng Chứng Này",
+    "viewSquad": "Xem Đội"
+  },
+  "stats": {
+    "activeChallenges": "Thử Thách Đang Hoạt Động",
+    "completedChallenges": "Đã Hoàn Thành",
+    "totalStaked": "Tổng Tiền Cọc",
+    "successRate": "Tỷ Lệ Thành Công",
+    "daysRemaining": "Còn {{count}} ngày",
+    "daysRemaining_plural": "Còn {{count}} ngày",
+    "proofsSubmitted": "Đã nộp {{submitted}}/{{required}} bằng chứng"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "app": {
+    "name": "CamKết.vn",
+    "tagline": "Đạt Mục Tiêu Với Cam Kết Tài Chính",
+    "description": "Tạo thử thách, đặt cọc tiền, và giữ cam kết với bạn bè. Biến cam kết thành thành tựu."
+  },
+  "nav": {
+    "home": "Trang Chủ",
+    "dashboard": "Bảng Điều Khiển",
+    "challenges": "Thử Thách",
+    "newChallenge": "Thử Thách Mới",
+    "profile": "Hồ Sơ",
+    "settings": "Cài Đặt",
+    "login": "Đăng Nhập",
+    "signup": "Đăng Ký",
+    "signout": "Đăng Xuất"
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "view": "Xem",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "sort": "Sắp xếp",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "submit": "Gửi",
+    "close": "Đóng"
+  },
+  "errors": {
+    "generic": "Đã có lỗi xảy ra. Vui lòng thử lại.",
+    "network": "Lỗi kết nối. Vui lòng kiểm tra mạng.",
+    "unauthorized": "Bạn cần đăng nhập để truy cập.",
+    "notFound": "Không tìm thấy trang.",
+    "serverError": "Lỗi máy chủ. Vui lòng thử lại sau."
+  },
+  "footer": {
+    "copyright": "© {{year}} CamKết.vn. Bảo lưu mọi quyền.",
+    "privacy": "Chính Sách Bảo Mật",
+    "terms": "Điều Khoản Dịch Vụ",
+    "contact": "Liên Hệ"
+  },
+  "hero": {
+    "titleStart": "Biến Mục Tiêu Thành",
+    "titleEmphasis": "Cam Kết"
+  },
+  "home": {
+    "howItWorks": "Cách Hoạt Động"
+  },
+  "cta": {
+    "getStarted": "Bắt Đầu",
+    "readyTitle": "Sẵn Sàng Cam Kết Với Mục Tiêu?",
+    "startFirstChallenge": "Bắt Đầu Thử Thách Đầu Tiên"
+  },
+  "features": [
+    {
+      "icon": "target",
+      "title": "1. Tạo Thử Thách",
+      "description": "Đặt mục tiêu và đặt cọc tiền để hoàn thành. Cọc càng cao, động lực càng lớn."
+    },
+    {
+      "icon": "users",
+      "title": "2. Xây Dựng Đội",
+      "description": "Mời 1-5 bạn bè làm người giám sát. Họ sẽ xác minh tiến độ và giữ bạn trung thực."
+    },
+    {
+      "icon": "shield",
+      "title": "3. Nộp Bằng Chứng",
+      "description": "Tải lên ảnh hoặc video làm bằng chứng. Đội của bạn có thể khiếu nại các bài nộp không hợp lệ."
+    },
+    {
+      "icon": "trophy",
+      "title": "4. Thắng hoặc Học",
+      "description": "Hoàn thành thử thách để nhận lại tiền. Thất bại, đội của bạn sẽ chia tiền cọc."
+    }
+  ]
+}

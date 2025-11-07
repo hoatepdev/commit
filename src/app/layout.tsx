@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Navbar } from '@/components/navbar';
+import { i18nConfig, type Locale } from '@/i18n/config';
 
 const inter = Inter({ subsets: ['latin', 'vietnamese'] });
 
@@ -27,14 +28,27 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { lang?: Locale };
 }>) {
+  const requestedLang = params?.lang;
+  const htmlLang = i18nConfig.locales.includes(requestedLang as Locale)
+    ? (requestedLang as Locale)
+    : i18nConfig.defaultLocale;
+
   return (
-    <html lang="vi" suppressHydrationWarning>
+    <html lang={htmlLang} suppressHydrationWarning>
       <body className={inter.className}>
-        <Navbar />
-        {children}
+        {requestedLang ? (
+          children
+        ) : (
+          <>
+            <Navbar />
+            {children}
+          </>
+        )}
         <Toaster />
       </body>
     </html>

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -14,13 +14,30 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { createClient } from '@/lib/supabase/client';
 import { useEffect, useState } from 'react';
 import { Target, User, LogOut, Settings } from 'lucide-react';
-import { i18nConfig } from '@/i18n/config';
+import { type Locale } from '@/i18n/config';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
-export function Navbar() {
+interface NavbarProps {
+  lang: Locale;
+  labels: {
+    home: string;
+    dashboard: string;
+    newChallenge: string;
+    profile: string;
+    settings: string;
+    login: string;
+    signup: string;
+    signout: string;
+  };
+  brandName: string;
+}
+
+export function Navbar({ lang, labels, brandName }: NavbarProps) {
   const [user, setUser] = useState<any>(null);
   const pathname = usePathname();
-  const router = useRouter();
   const supabase = createClient();
+
+  // labels are provided from server dictionaries via props
 
   useEffect(() => {
     getUser();
@@ -35,17 +52,11 @@ export function Navbar() {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    router.push('/');
-    router.refresh();
+    window.location.href = `/${lang}`;
   };
 
   // Don't show navbar on auth pages
-  const isAuthPage = pathname === '/login' || pathname === '/signup';
-  const isLocalizedRoute = i18nConfig.locales.some((locale) =>
-    pathname?.startsWith(`/${locale}`)
-  );
-
-  if (isAuthPage || isLocalizedRoute) {
+  if (pathname?.includes('/login') || pathname?.includes('/signup')) {
     return null;
   }
 
@@ -53,22 +64,25 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link
-          href={user ? '/dashboard' : '/'}
+          href={user ? `/${lang}/dashboard` : `/${lang}`}
           className="flex items-center gap-2"
         >
           <Target className="h-6 w-6 text-primary" />
-          <span className="text-xl font-bold">Commit.vn</span>
+          <span className="text-xl font-bold">{brandName}</span>
         </Link>
 
         <div className="flex items-center gap-4">
           {user ? (
             <>
               <Button asChild variant="ghost">
-                <Link href="/dashboard">Dashboard</Link>
+                <Link href={`/${lang}/dashboard`}>{labels.dashboard}</Link>
               </Button>
               <Button asChild variant="ghost">
-                <Link href="/challenges/new">New Challenge</Link>
+                <Link href={`/${lang}/challenges/new`}>
+                  {labels.newChallenge}
+                </Link>
               </Button>
+              <LanguageSwitcher />
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -96,15 +110,15 @@ export function Navbar() {
                   </div>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link href="/profile" className="cursor-pointer">
+                    <Link href={`/${lang}/profile`} className="cursor-pointer">
                       <User className="mr-2 h-4 w-4" />
-                      Profile
+                      {labels.profile}
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/settings" className="cursor-pointer">
+                    <Link href={`/${lang}/settings`} className="cursor-pointer">
                       <Settings className="mr-2 h-4 w-4" />
-                      Settings
+                      {labels.settings}
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
@@ -113,18 +127,19 @@ export function Navbar() {
                     className="cursor-pointer"
                   >
                     <LogOut className="mr-2 h-4 w-4" />
-                    Sign Out
+                    {labels.signout}
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </>
           ) : (
             <>
+              <LanguageSwitcher />
               <Button asChild variant="ghost">
-                <Link href="/login">Login</Link>
+                <Link href={`/${lang}/login`}>{labels.login}</Link>
               </Button>
               <Button asChild>
-                <Link href="/signup">Sign Up</Link>
+                <Link href={`/${lang}/signup`}>{labels.signup}</Link>
               </Button>
             </>
           )}

@@ -1,0 +1,83 @@
+{
+  "app": {
+    "name": "Commit.vn",
+    "tagline": "Achieve Your Goals with Financial Stakes",
+    "description": "Create challenges, stake money, and stay accountable with friends. Turn your commitments into achievements."
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "challenges": "Challenges",
+    "newChallenge": "New Challenge",
+    "profile": "Profile",
+    "settings": "Settings",
+    "login": "Login",
+    "signup": "Sign Up",
+    "signout": "Sign Out"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "close": "Close"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "unauthorized": "You must be logged in to access this.",
+    "notFound": "Page not found.",
+    "serverError": "Server error. Please try again later."
+  },
+  "footer": {
+    "copyright": "© {{year}} Commit.vn. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "titleStart": "Turn Your Goals Into",
+    "titleEmphasis": "Commitments"
+  },
+  "home": {
+    "howItWorks": "How It Works"
+  },
+  "cta": {
+    "getStarted": "Get Started",
+    "readyTitle": "Ready to Commit to Your Goals?",
+    "startFirstChallenge": "Start Your First Challenge"
+  },
+  "features": [
+    {
+      "icon": "target",
+      "title": "1. Create Challenge",
+      "description": "Set your goal and stake money on completing it. The higher the stakes, the more motivated you'll be."
+    },
+    {
+      "icon": "users",
+      "title": "2. Build Your Squad",
+      "description": "Invite 1-5 friends as accountability partners. They'll verify your progress and keep you honest."
+    },
+    {
+      "icon": "shield",
+      "title": "3. Submit Proof",
+      "description": "Upload photos or videos as proof. Your squad can challenge invalid submissions."
+    },
+    {
+      "icon": "trophy",
+      "title": "4. Win or Learn",
+      "description": "Complete your challenge to get your money back. Fail, and your squad splits the stake."
+    }
+  ]
+}

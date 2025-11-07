@@ -1,0 +1,77 @@
+{
+  "title": "Create Your Commitment",
+  "fields": {
+    "title": "Challenge Title",
+    "titlePlaceholder": "e.g., Go to gym 3x/week",
+    "description": "Description",
+    "descriptionPlaceholder": "Describe your challenge...",
+    "stakeAmount": "Stake Amount",
+    "stakeAmountHint": "How much money are you willing to stake? (VND)",
+    "duration": "Duration",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "frequency": "Proof Frequency",
+    "frequencyDaily": "Daily",
+    "frequencyWeekly": "Weekly",
+    "frequencyCustom": "Custom",
+    "requiredProofs": "Required Proofs",
+    "requiredProofsHint": "How many proofs do you need to submit?"
+  },
+  "squad": {
+    "title": "Accountability Squad",
+    "subtitle": "Invite 1-5 friends as accountability partners",
+    "addMember": "Add Member",
+    "memberEmail": "Friend's Email",
+    "memberAdded": "{{count}} member added",
+    "memberAdded_plural": "{{count}} members added",
+    "maxReached": "Maximum 5 squad members allowed"
+  },
+  "payment": {
+    "title": "Complete Payment",
+    "summary": "Challenge Summary",
+    "stake": "Stake:",
+    "totalStake": "Total Stake",
+    "howItWorks": "How It Works",
+    "step1": "Your stake is held securely until the challenge ends",
+    "step2": "Complete your challenge to get your money back",
+    "step3": "If you fail, the stake is split among your accountability squad",
+    "payButton": "Pay {{amount}} VND"
+  },
+  "proof": {
+    "submitProof": "Submit Proof",
+    "uploadMedia": "Upload Photo or Video",
+    "caption": "Caption",
+    "captionPlaceholder": "Add a description...",
+    "proofDate": "Proof Date",
+    "submitted": "Proof submitted successfully",
+    "pending": "Pending Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "disputed": "Disputed"
+  },
+  "status": {
+    "pending": "Pending Payment",
+    "active": "Active",
+    "completed": "Completed",
+    "failed": "Failed",
+    "cancelled": "Cancelled"
+  },
+  "actions": {
+    "create": "Create Challenge",
+    "createAndPay": "Create & Proceed to Payment",
+    "viewDetails": "View Details",
+    "submitProof": "Submit Proof",
+    "verifyProof": "Verify Proof",
+    "challenge": "Challenge This Proof",
+    "viewSquad": "View Squad"
+  },
+  "stats": {
+    "activeChallenges": "Active Challenges",
+    "completedChallenges": "Completed",
+    "totalStaked": "Total Staked",
+    "successRate": "Success Rate",
+    "daysRemaining": "{{count}} day remaining",
+    "daysRemaining_plural": "{{count}} days remaining",
+    "proofsSubmitted": "{{submitted}}/{{required}} proofs submitted"
+  }
+}

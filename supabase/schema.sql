@@ -133,7 +133,7 @@ CREATE POLICY "Challenges viewable by creator and squad"
     OR EXISTS (
       SELECT 1 FROM public.squad_members
       WHERE challenge_id = id 
-      AND (user_id = auth.uid() OR email = (SELECT email FROM auth.users WHERE id = auth.uid()))
+      AND (user_id = auth.uid() OR email = public.get_user_email(auth.uid()))
       AND status = 'accepted'
     )
   );
@@ -151,7 +151,7 @@ CREATE POLICY "Squad members viewable by challenge participants"
   ON public.squad_members FOR SELECT
   USING (
     user_id = auth.uid()
-    OR email = (SELECT email FROM auth.users WHERE id = auth.uid())
+    OR email = public.get_user_email(auth.uid())
     OR public.is_challenge_creator(challenge_id, auth.uid())
   );
 
@@ -204,6 +204,14 @@ BEGIN
     SELECT 1 FROM public.challenges
     WHERE id = challenge_id_param AND creator_id = user_id_param
   );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Get user email (bypasses RLS for auth.users access)
+CREATE OR REPLACE FUNCTION public.get_user_email(user_id_param UUID)
+RETURNS TEXT AS $$
+BEGIN
+  RETURN (SELECT email FROM auth.users WHERE id = user_id_param);
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
