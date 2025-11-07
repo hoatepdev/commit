@@ -1,0 +1,27 @@
+{
+  "name": "Commit.vn - Achieve Your Goals",
+  "short_name": "Commit.vn",
+  "description": "Create challenges, stake money, and stay accountable with friends",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2B5561",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "lifestyle", "social"],
+  "lang": "vi",
+  "dir": "ltr"
+}
